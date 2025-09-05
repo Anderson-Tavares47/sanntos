@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-import Logo from "@/assets/img/logo santos.png";
+import Logo from "@/assets/img/logo santos.png";  
 
 export default function Header() {
   const pathname = usePathname();
@@ -93,3 +93,4 @@ export default function Header() {
     </header>
   );
 }
+
