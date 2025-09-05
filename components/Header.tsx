@@ -13,11 +13,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
+    { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfólio" },
     { href: "/quem-somos", label: "Quem somos" },
     { href: "/servicos", label: "Serviços" },
     { href: "/blog", label: "Blog" },
     { href: "/contato", label: "Contato" },
+    { href: "/trabalhe-conosco", label: "Trabalhe Conosco" },
   ];
 
   return (
