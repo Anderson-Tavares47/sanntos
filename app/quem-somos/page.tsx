@@ -18,7 +18,7 @@ const fadeUp = {
 
 export default function QuemSomosPage() {
   return (
-    <section className="relative flex items-center justify-center min-h-screen py-16 sm:py-20 md:py-24">
+    <section className="relative flex items-center justify-center min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
