@@ -21,19 +21,42 @@ export default function ContatoPage() {
     mensagem: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    alert("Mensagem enviada! 🚀 (aqui vamos integrar com API ou e-mail)");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Mensagem enviada com sucesso 🚀");
+        setForm({ nome: "", email: "", telefone: "", mensagem: "" });
+      } else {
+        alert("❌ Erro ao enviar: " + data.message);
+      }
+    } catch (err) {
+      alert("❌ Falha ao conectar com o servidor.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen py-16 px-6">
+    <section className="relative flex items-center justify-center min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -54,16 +77,18 @@ export default function ContatoPage() {
           Contato
         </motion.h2>
 
-        {/* Subtítulo (sem quebras forçadas) */}
+        {/* Subtítulo */}
         <motion.p
           className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-5xl mx-auto mb-10"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
         >
-          Vamos dar vida ao seu projeto?<br/> Sua jornada para um ambiente que reflete
-          sua identidade e bem-estar começa aqui. Preencha o formulário abaixo e,
-          em breve, um de nossos consultores entrará em contato.
+          Vamos dar vida ao seu projeto?
+          <br />
+          Sua jornada para um ambiente que reflete sua identidade e bem-estar
+          começa aqui. Preencha o formulário abaixo e, em breve, um de nossos
+          consultores entrará em contato.
         </motion.p>
 
         {/* Formulário */}
@@ -110,11 +135,32 @@ export default function ContatoPage() {
           />
           <button
             type="submit"
-            className="bg-primary text-dark font-semibold py-3 rounded-lg hover:opacity-90 transition"
+            disabled={loading}
+            className="bg-primary text-dark font-semibold py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50"
           >
-            Enviar
+            {loading ? "Enviando..." : "Enviar"}
           </button>
         </motion.form>
+
+        {/* Frase abaixo do card */}
+        <motion.p
+          className="mt-6 text-base md:text-lg text-gray-200 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
+          Prefere falar direto com a gente? <br />
+          Nos chame no{" "}
+          <a
+            href="https://wa.me/5508002000091"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline"
+          >
+            WhatsApp
+          </a>
+          .
+        </motion.p>
       </div>
     </section>
   );
