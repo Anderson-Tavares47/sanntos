@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-import Logo from "@/assets/img/logo santos.png";  
+import Logo from "@/assets/img/novoLogo.png";
 
 export default function Header() {
   const pathname = usePathname();
@@ -23,7 +23,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-dark text-white shadow-md sticky top-0 z-50">
+    <header className="absolute top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 text-white z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -70,7 +70,7 @@ export default function Header() {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="md:hidden bg-dark text-white px-6 py-4 space-y-4">
+        <div className="md:hidden bg-black/40 backdrop-blur-md text-white px-6 py-4 space-y-4">
           {links.map(({ href, label }) => {
             const isActive = pathname === href;
             return (
@@ -93,4 +93,3 @@ export default function Header() {
     </header>
   );
 }
-
