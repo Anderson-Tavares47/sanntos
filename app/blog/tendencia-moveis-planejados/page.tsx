@@ -18,7 +18,7 @@ const fadeUp = {
 
 export default function TendenciaMoveisPlanejadosPage() {
   return (
-    <section className="relative flex items-center justify-center min-h-screen px-6 py-20">
+    <section className="relative flex items-center justify-center min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -35,7 +35,7 @@ export default function TendenciaMoveisPlanejadosPage() {
           animate="visible"
           variants={fadeUp}
         >
-          Móveis planejados: A tendência que veio para ficar.  
+          Móveis planejados: A tendência que veio para ficar.
           Entenda os motivos por trás da alta
         </motion.h1>
 
