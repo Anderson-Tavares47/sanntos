@@ -74,7 +74,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-20">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -119,46 +119,45 @@ export default function PortfolioPage() {
         </motion.div>
       </div>
 
-    {/* Modal de visualização */}
-{selectedIndex !== null && (
-  <div
-    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-    onClick={() => setSelectedIndex(null)}
-  >
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      className="relative max-w-5xl w-full px-4 flex items-center justify-center"
-    >
-      {/* Botão anterior */}
-      <button
-        onClick={handlePrev}
-        className="absolute left-2 md:left-6 bg-white/80 text-black rounded-full px-3 py-2 text-lg font-bold shadow-md hover:bg-white"
-      >
-        ‹
-      </button>
+      {/* Modal de visualização */}
+      {selectedIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setSelectedIndex(null)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="relative max-w-5xl w-full px-4 flex items-center justify-center"
+          >
+            {/* Botão anterior */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-2 md:left-6 bg-white/80 text-black rounded-full px-3 py-2 text-lg font-bold shadow-md hover:bg-white"
+            >
+              ‹
+            </button>
 
-      {/* Imagem ajustada */}
-      <Image
-        src={portfolioImages[selectedIndex]}
-        alt={`Imagem ${selectedIndex + 1}`}
-        width={1200}
-        height={800}
-        className="max-h-[90vh] w-auto mx-auto rounded-lg shadow-lg object-contain"
-      />
+            {/* Imagem ajustada */}
+            <Image
+              src={portfolioImages[selectedIndex]}
+              alt={`Imagem ${selectedIndex + 1}`}
+              width={1200}
+              height={800}
+              className="max-h-[90vh] w-auto mx-auto rounded-lg shadow-lg object-contain"
+            />
 
-      {/* Botão próximo */}
-      <button
-        onClick={handleNext}
-        className="absolute right-2 md:right-6 bg-white/80 text-black rounded-full px-3 py-2 text-lg font-bold shadow-md hover:bg-white"
-      >
-        ›
-      </button>
-    </motion.div>
-  </div>
-)}
-
+            {/* Botão próximo */}
+            <button
+              onClick={handleNext}
+              className="absolute right-2 md:right-6 bg-white/80 text-black rounded-full px-3 py-2 text-lg font-bold shadow-md hover:bg-white"
+            >
+              ›
+            </button>
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 }
