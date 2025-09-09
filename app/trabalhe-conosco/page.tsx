@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import FundoContato from "@/assets/img/fundoContato.jpg";
+import FundoContato from "@/assets/img/bannertrabalheconosco.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -74,7 +74,7 @@ export default function TrabalheConoscoPage() {
   }
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen py-16 px-6">
+    <section className="relative flex items-center justify-center min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -100,7 +100,7 @@ export default function TrabalheConoscoPage() {
           initial="hidden"
           animate="visible"
         >
-          Quer fazer parte da nossa equipe? <br/> Preencha o formulário abaixo e
+          Quer fazer parte da nossa equipe? <br /> Preencha o formulário abaixo e
           anexe seu currículo em PDF.
         </motion.p>
 
@@ -163,6 +163,27 @@ export default function TrabalheConoscoPage() {
             {loading ? "Enviando..." : "Enviar Currículo"}
           </button>
         </motion.form>
+
+        {/* Frase abaixo do card */}
+        <motion.p
+          className="mt-6 text-base md:text-lg text-gray-200 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
+          Prefere falar direto com a gente? <br />
+          Nos chame no{" "}
+          <a
+            href="https://wa.me/5508002000091"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline"
+          >
+            WhatsApp
+          </a>
+          .
+        </motion.p>
+
       </div>
     </section>
   );
