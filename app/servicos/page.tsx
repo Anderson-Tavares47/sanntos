@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import Icon1 from '@/assets/img/icon1.webp';
-import Icon2 from '@/assets/img/icon2.png';
-import Icon3 from '@/assets/img/icon3.png';
-import Icon4 from '@/assets/img/icon4.png';
+import Icon1 from '@/assets/img/designer.webp';
+import Icon2 from '@/assets/img/planejamento.webp';
+import Icon3 from '@/assets/img/qualidade.jpg';
+import Icon4 from '@/assets/img/montagem.webp';
 import FundoServicos from '@/assets/img/fundoSv.webp';
 
 const fadeFromLeft = {
@@ -21,7 +21,7 @@ const fadeFromRight = {
 
 export default function ServicosPage() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-white px-6 py-20">
+    <section className="relative flex flex-col items-center justify-center min-h-screen text-white px-6 pt-28 sm:pt-32 md:pt-36 pb-16">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -66,7 +66,9 @@ export default function ServicosPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Image src={Icon1} alt="Consultoria" width={120} height={120} className="mb-6 mx-auto" />
+            <div className="w-full h-[400px] mb-6 overflow-hidden rounded-[5px]">
+              <Image src={Icon1} alt="Consultoria" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-2xl font-semibold mb-4">Consultoria e Design de Interiores</h3>
             <p className="text-gray-200 leading-relaxed text-justify">
               Tudo começa com uma escuta atenta. Nesta primeira etapa, nossa equipe de designers 
@@ -85,7 +87,9 @@ export default function ServicosPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Image src={Icon2} alt="Planejamento" width={120} height={120} className="mb-6 mx-auto" />
+            <div className="w-full h-[400px] mb-6 overflow-hidden rounded-[5px]">
+              <Image src={Icon2} alt="Planejamento" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-2xl font-semibold mb-4">Planejamento Técnico e Estrutural</h3>
             <p className="text-gray-200 leading-relaxed text-justify">
               É aqui que nosso grande diferencial entra em cena: o DNA de montagem. 
@@ -104,7 +108,9 @@ export default function ServicosPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Image src={Icon3} alt="Produção" width={120} height={120} className="mb-6 mx-auto" />
+            <div className="w-full h-[400px] mb-6 overflow-hidden rounded-[5px]">
+              <Image src={Icon3} alt="Produção" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-2xl font-semibold mb-4">Produção de Qualidade</h3>
             <p className="text-gray-200 leading-relaxed text-justify">
               A qualidade de um móvel planejado está diretamente ligada à matéria-prima. 
@@ -123,7 +129,9 @@ export default function ServicosPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Image src={Icon4} alt="Montagem" width={120} height={120} className="mb-6 mx-auto" />
+            <div className="w-full h-[400px] mb-6 overflow-hidden rounded-[5px]">
+              <Image src={Icon4} alt="Montagem" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-2xl font-semibold mb-4">Montagem Master</h3>
             <p className="text-gray-200 leading-relaxed text-justify">
               A etapa que deu origem à nossa empresa é executada com a maestria que nos define. 
