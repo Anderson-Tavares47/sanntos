@@ -81,7 +81,7 @@ export default function PortfolioPage() {
         style={{ backgroundImage: `url(${FundoPortfolio.src})` }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Conteúdo */}
       <div className="relative z-10 max-w-7xl w-full">

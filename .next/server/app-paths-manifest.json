@@ -1,0 +1,12 @@
+{
+  "/blog/diferenca-planejados-sob-medida/page": "app/blog/diferenca-planejados-sob-medida/page.js",
+  "/blog/montador-moveis-reformas/page": "app/blog/montador-moveis-reformas/page.js",
+  "/blog/moveis-planejados-aluguel/page": "app/blog/moveis-planejados-aluguel/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/page": "app/page.js",
+  "/portfolio/page": "app/portfolio/page.js",
+  "/quem-somos/page": "app/quem-somos/page.js",
+  "/servicos/page": "app/servicos/page.js",
+  "/trabalhe-conosco/page": "app/trabalhe-conosco/page.js"
+}

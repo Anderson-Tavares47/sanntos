@@ -63,7 +63,7 @@ export default function ContatoPage() {
         style={{ backgroundImage: `url(${FundoContato.src})` }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Conteúdo */}
       <div className="relative z-10 w-full max-w-3xl text-center text-white">

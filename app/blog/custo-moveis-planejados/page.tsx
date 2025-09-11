@@ -25,7 +25,7 @@ export default function CustoMoveisPlanejadosPage() {
         style={{ backgroundImage: `url(${FundoPost.src})` }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Conteúdo */}
       <div className="relative z-10 max-w-4xl text-white">

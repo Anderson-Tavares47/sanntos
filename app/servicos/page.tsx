@@ -28,7 +28,7 @@ export default function ServicosPage() {
         style={{ backgroundImage: `url(${FundoServicos.src})` }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Conteúdo */}
       <div className="relative z-10 max-w-6xl w-full">

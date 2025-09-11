@@ -28,7 +28,7 @@ export default function QuemSomosPage() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Conteúdo */}
       <div className="relative z-10 text-white px-4 sm:px-6 max-w-4xl">
